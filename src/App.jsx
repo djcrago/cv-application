@@ -8,7 +8,6 @@ import Skills from './components/Skills';
 
 function App() {
   const [editing, setEditing] = useState(false);
-  console.log('render');
 
   return (
     <>
