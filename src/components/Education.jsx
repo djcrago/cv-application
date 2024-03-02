@@ -2,32 +2,26 @@ import { useState } from 'react';
 import '../styles/Education.css';
 
 export default function Education({ editing }) {
-  const [schools, setSchools] = useState([
-    {
-      name: 'Name 1',
-      title: 'Title 1',
-      startDate: 'Start Date 1',
-      endDate: 'End Date 1',
-      id: 0,
-    },
-    {
-      name: 'Name 2',
-      title: 'Title 2',
-      startDate: 'Start Date 2',
-      endDate: 'End Date 2',
-      id: 1,
-    },
-  ]);
+  const [schools, setSchools] = useState([]);
+  const [nextId, setNextId] = useState(0);
 
   function handleChange(school, event, variable) {
     setSchools(
       schools.map((s) => {
-        if (s.name === school.name) {
+        if (s.id === school.id) {
           return { ...s, [variable]: event.target.value };
         }
         return s;
       })
     );
+  }
+
+  function addSchool() {
+    setNextId(nextId + 1);
+    setSchools([
+      ...schools,
+      { id: nextId, name: '', title: '', startDate: '', endDate: '' },
+    ]);
   }
 
   if (editing) {
@@ -39,7 +33,7 @@ export default function Education({ editing }) {
             <form key={school.id}>
               <input
                 type="text"
-                placeholder="School Name"
+                placeholder="School (or other) Name"
                 value={school.name}
                 onChange={(event) => handleChange(school, event, 'name')}
               />{' '}
@@ -67,6 +61,9 @@ export default function Education({ editing }) {
             </form>
           );
         })}
+        <button type="button" onClick={() => addSchool()}>
+          Add
+        </button>
       </div>
     );
   }
