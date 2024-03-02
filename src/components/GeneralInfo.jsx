@@ -2,10 +2,10 @@ import { useState } from 'react';
 import '../styles/GeneralInfo.css';
 
 export default function GeneralInfo({ editing }) {
-  const [name, setName] = useState('Name');
-  const [email, setEmail] = useState('email@email.com');
+  const [name, setName] = useState('My Name');
+  const [email, setEmail] = useState('myemail@example.com');
   const [telephone, setTelephone] = useState('(123) 456-7890');
-  const [address, setAddress] = useState('123 Some St, Some Town, SS, 12345');
+  const [address, setAddress] = useState('My Address');
 
   if (editing) {
     return (
@@ -39,14 +39,12 @@ export default function GeneralInfo({ editing }) {
     );
   }
 
-  if (!editing) {
-    return (
-      <div className="info">
-        <h1>{name}</h1>
-        <p>{email}</p>
-        <p>{telephone}</p>
-        <p>{address}</p>
-      </div>
-    );
-  }
+  return (
+    <div className="info">
+      <h1>{name}</h1>
+      <p>{email}</p>
+      <p>{telephone}</p>
+      <p>{address}</p>
+    </div>
+  );
 }
