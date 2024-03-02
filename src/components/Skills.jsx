@@ -32,6 +32,20 @@ export default function Skills({ editing }) {
     ]);
   }
 
+  function removeSkill(skill) {
+    if (skills.length <= 1) {
+      setSkills([
+        {
+          id: nextId,
+          text: '',
+        },
+      ]);
+    }
+    if (skills.length > 1) {
+      setSkills(skills.filter((s) => s.id !== skill.id));
+    }
+  }
+
   if (editing) {
     return (
       <div className="skills">
@@ -45,6 +59,9 @@ export default function Skills({ editing }) {
                 value={skill.text}
                 onChange={(event) => handleChange(skill, event, 'text')}
               />
+              <button type="button" onClick={() => removeSkill(skill)}>
+                Remove
+              </button>
             </form>
           );
         })}

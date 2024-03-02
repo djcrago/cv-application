@@ -40,6 +40,24 @@ export default function Employment({ editing }) {
     ]);
   }
 
+  function removeExperience(experience) {
+    if (experiences.length <= 1) {
+      setExperiences([
+        {
+          id: nextId,
+          name: '',
+          title: '',
+          startDate: '',
+          endDate: '',
+          responsibilities: '',
+        },
+      ]);
+    }
+    if (experiences.length > 1) {
+      setExperiences(experiences.filter((e) => e.id !== experience.id));
+    }
+  }
+
   if (editing) {
     return (
       <div className="employment">
@@ -85,6 +103,12 @@ export default function Employment({ editing }) {
                   handleChange(experience, event, 'responsibilities')
                 }
               />
+              <button
+                type="button"
+                onClick={() => removeExperience(experience)}
+              >
+                Remove
+              </button>
             </form>
           );
         })}
