@@ -26,6 +26,17 @@ export default function Education({ editing }) {
     ]);
   }
 
+  function removeSchool(school) {
+    if (schools.length <= 1) {
+      setSchools([
+        { id: nextId, name: '', title: '', startDate: '', endDate: '' },
+      ]);
+    }
+    if (schools.length > 1) {
+      setSchools(schools.filter((s) => s.id !== school.id));
+    }
+  }
+
   if (editing) {
     return (
       <div className="education">
@@ -60,6 +71,9 @@ export default function Education({ editing }) {
                 value={school.endDate}
                 onChange={(event) => handleChange(school, event, 'endDate')}
               />
+              <button type="button" onClick={() => removeSchool(school)}>
+                Remove
+              </button>
             </form>
           );
         })}
