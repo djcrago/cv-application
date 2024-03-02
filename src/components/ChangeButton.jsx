@@ -1,3 +1,5 @@
+import '../styles/ChangeButton.css';
+
 export default function ChangeButton({ editing, setEditing }) {
   let text = 'Edit';
 
