@@ -14,6 +14,24 @@ export default function Employment({ editing }) {
     },
   ]);
 
+  function ExperienceItem({ experience }) {
+    if (experience.name) {
+      return (
+        <div>
+          <h3>{experience.name}</h3>
+          <ul>
+            {experience.title && <li>Position: {experience.title}</li>}
+            {experience.startDate && <li>Started: {experience.startDate}</li>}
+            {experience.endDate && <li>Finished: {experience.endDate}</li>}
+            {experience.responsibilities && (
+              <li>Responsibilities: {experience.responsibilities}</li>
+            )}
+          </ul>
+        </div>
+      );
+    }
+  }
+
   function handleChange(experience, event, variable) {
     setExperiences(
       experiences.map((e) => {
@@ -56,6 +74,17 @@ export default function Employment({ editing }) {
     if (experiences.length > 1) {
       setExperiences(experiences.filter((e) => e.id !== experience.id));
     }
+  }
+
+  if (!editing) {
+    return (
+      <div className="employment">
+        <h2>Practical Experience</h2>
+        {experiences.map((e) => {
+          return <ExperienceItem key={e.id} experience={e} />;
+        })}
+      </div>
+    );
   }
 
   if (editing) {
@@ -118,18 +147,4 @@ export default function Employment({ editing }) {
       </div>
     );
   }
-
-  return (
-    <div className="education">
-      <h2>Practical Experience</h2>
-      {experiences.map((experience) => {
-        return (
-          <div key={experience.id}>
-            {experience.name} - {experience.title} - From {experience.startDate}{' '}
-            to {experience.endDate} - {experience.responsibilities}
-          </div>
-        );
-      })}
-    </div>
-  );
 }

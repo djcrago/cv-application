@@ -46,6 +46,19 @@ export default function Skills({ editing }) {
     }
   }
 
+  if (!editing) {
+    return (
+      <div className="skills">
+        <h2>Skills</h2>
+        <ul>
+          {skills.map((skill) => {
+            if (skill.text) return <li key={skill.id}>{skill.text}</li>;
+          })}
+        </ul>
+      </div>
+    );
+  }
+
   if (editing) {
     return (
       <div className="skills">
@@ -71,15 +84,4 @@ export default function Skills({ editing }) {
       </div>
     );
   }
-
-  return (
-    <div className="skills">
-      <h2>Skills</h2>
-      <ul>
-        {skills.map((skill) => {
-          return <li key={skill.id}>{skill.text}</li>;
-        })}
-      </ul>
-    </div>
-  );
 }
