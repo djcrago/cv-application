@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 export default function Education() {
-  const [schools, setSchool] = useState([]);
-  // if editing = true, return inputs with previous values contained
-  // if editing = false, return html elements with previous input values
+  const [schools, setSchools] = useState([]);
+
+  // cycle through schools
+  // if editing = true, return inputs with object values
+  // if editing = false, return html elements with object values
 
   function School({ name, title, startDate, endDate }) {
     return (

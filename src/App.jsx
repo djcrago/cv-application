@@ -11,10 +11,10 @@ function App() {
 
   return (
     <>
-      <GeneralInfo />
-      <Education />
-      <Employment />
-      <Skills />
+      <GeneralInfo editing={editing} />
+      {/* <Education /> */}
+      {/* <Employment /> */}
+      {/* <Skills /> */}
       <ChangeButton editing={editing} setEditing={setEditing} />
     </>
   );
