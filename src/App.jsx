@@ -13,7 +13,7 @@ function App() {
     <>
       <GeneralInfo editing={editing} />
       <Education editing={editing} />
-      {/* <Employment editing={editing}/> */}
+      <Employment editing={editing} />
       {/* <Skills editing={editing} /> */}
       <ChangeButton editing={editing} setEditing={setEditing} />
     </>

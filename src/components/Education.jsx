@@ -73,7 +73,7 @@ export default function Education({ editing }) {
       <h2>Educational History</h2>
       {schools.map((school) => {
         return (
-          <div key={school.name}>
+          <div key={school.id}>
             {school.name} - {school.title} - From {school.startDate} to{' '}
             {school.endDate}
           </div>
