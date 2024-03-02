@@ -7,7 +7,7 @@ import GeneralInfo from './components/GeneralInfo';
 import Skills from './components/Skills';
 
 function App() {
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(true);
 
   return (
     <>

@@ -2,8 +2,13 @@ import { useState } from 'react';
 import '../styles/Skills.css';
 
 export default function Skills({ editing }) {
-  const [skills, setSkills] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [skills, setSkills] = useState([
+    {
+      id: nextId,
+      text: '',
+    },
+  ]);
 
   function handleChange(skill, event, variable) {
     setSkills(
@@ -21,7 +26,7 @@ export default function Skills({ editing }) {
     setSkills([
       ...skills,
       {
-        id: nextId,
+        id: nextId + 1,
         text: '',
       },
     ]);

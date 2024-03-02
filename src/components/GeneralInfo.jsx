@@ -2,10 +2,10 @@ import { useState } from 'react';
 import '../styles/GeneralInfo.css';
 
 export default function GeneralInfo({ editing }) {
-  const [name, setName] = useState('My Name');
-  const [email, setEmail] = useState('myemail@example.com');
-  const [telephone, setTelephone] = useState('(123) 456-7890');
-  const [address, setAddress] = useState('My Address');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [telephone, setTelephone] = useState('');
+  const [address, setAddress] = useState('');
 
   if (editing) {
     return (

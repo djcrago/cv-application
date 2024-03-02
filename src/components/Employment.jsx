@@ -2,8 +2,17 @@ import { useState } from 'react';
 import '../styles/Employment.css';
 
 export default function Employment({ editing }) {
-  const [experiences, setExperiences] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [experiences, setExperiences] = useState([
+    {
+      id: nextId,
+      name: '',
+      title: '',
+      startDate: '',
+      endDate: '',
+      responsibilities: '',
+    },
+  ]);
 
   function handleChange(experience, event, variable) {
     setExperiences(
@@ -21,7 +30,7 @@ export default function Employment({ editing }) {
     setExperiences([
       ...experiences,
       {
-        id: nextId,
+        id: nextId + 1,
         name: '',
         title: '',
         startDate: '',

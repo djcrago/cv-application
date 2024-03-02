@@ -2,8 +2,10 @@ import { useState } from 'react';
 import '../styles/Education.css';
 
 export default function Education({ editing }) {
-  const [schools, setSchools] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [schools, setSchools] = useState([
+    { id: nextId, name: '', title: '', startDate: '', endDate: '' },
+  ]);
 
   function handleChange(school, event, variable) {
     setSchools(
@@ -20,7 +22,7 @@ export default function Education({ editing }) {
     setNextId(nextId + 1);
     setSchools([
       ...schools,
-      { id: nextId, name: '', title: '', startDate: '', endDate: '' },
+      { id: nextId + 1, name: '', title: '', startDate: '', endDate: '' },
     ]);
   }
 
