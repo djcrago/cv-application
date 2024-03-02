@@ -50,11 +50,9 @@ export default function Skills({ editing }) {
     return (
       <div className="skills">
         <h2>Skills</h2>
-        <ul>
-          {skills.map((skill) => {
-            if (skill.text) return <li key={skill.id}>{skill.text}</li>;
-          })}
-        </ul>
+        {skills.map((skill) => {
+          if (skill.text) return <h3 key={skill.id}>{skill.text}</h3>;
+        })}
       </div>
     );
   }

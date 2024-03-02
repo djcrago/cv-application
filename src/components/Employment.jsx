@@ -94,39 +94,40 @@ export default function Employment({ editing }) {
         {experiences.map((experience) => {
           return (
             <form key={experience.id}>
+              Company (or other) Name:{' '}
               <input
                 type="text"
-                placeholder="Company (or other) Name"
+                placeholder="Example Company"
                 value={experience.name}
                 onChange={(event) => handleChange(experience, event, 'name')}
-              />{' '}
-              -
+              />
+              Position Title:{' '}
               <input
                 type="text"
-                placeholder="Position Title"
+                placeholder="Example job title"
                 value={experience.title}
                 onChange={(event) => handleChange(experience, event, 'title')}
-              />{' '}
-              - From
+              />
+              Started:{' '}
               <input
                 type="text"
-                placeholder="Start Date (month, year)"
+                placeholder="Month, Year"
                 value={experience.startDate}
                 onChange={(event) =>
                   handleChange(experience, event, 'startDate')
                 }
               />
-              to
+              Finished:{' '}
               <input
                 type="text"
-                placeholder="End Date (month, year)"
+                placeholder="Month, Year"
                 value={experience.endDate}
                 onChange={(event) => handleChange(experience, event, 'endDate')}
               />
-              -
+              Responsibilities:{' '}
               <input
                 type="text"
-                placeholder="Main responsibilities"
+                placeholder="Example responsibility"
                 value={experience.responsibilities}
                 onChange={() =>
                   handleChange(experience, event, 'responsibilities')

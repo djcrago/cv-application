@@ -70,30 +70,31 @@ export default function Education({ editing }) {
         {schools.map((school) => {
           return (
             <form key={school.id}>
+              School (or other) Name:{' '}
               <input
                 type="text"
-                placeholder="School (or other) Name"
+                placeholder="Example Univeristy"
                 value={school.name}
                 onChange={(event) => handleChange(school, event, 'name')}
-              />{' '}
-              -
+              />
+              Title of Study:{' '}
               <input
                 type="text"
-                placeholder="Title of Study (degree, certificate, etc.)"
+                placeholder="Degree, certificate, etc."
                 value={school.title}
                 onChange={(event) => handleChange(school, event, 'title')}
-              />{' '}
-              - From
+              />
+              Started:{' '}
               <input
                 type="text"
-                placeholder="Start Date (month, year)"
+                placeholder="Month, Year"
                 value={school.startDate}
                 onChange={(event) => handleChange(school, event, 'startDate')}
               />
-              to
+              Finished:{' '}
               <input
                 type="text"
-                placeholder="End Date (month, year)"
+                placeholder="Month, Year"
                 value={school.endDate}
                 onChange={(event) => handleChange(school, event, 'endDate')}
               />

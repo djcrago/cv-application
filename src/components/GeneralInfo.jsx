@@ -33,21 +33,24 @@ export default function GeneralInfo({ editing }) {
             onChange={(event) => setName(event.target.value)}
           />
           <h2>Contact Info</h2>
+          Email:{' '}
           <input
             type="email"
-            placeholder="Email (example@example.com"
+            placeholder="(example@example.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
+          Phone Number:{' '}
           <input
             type="tel"
-            placeholder="Telephone Number ( (123) 456-7890 )"
+            placeholder="(123) 456-7890"
             value={telephone}
             onChange={(event) => setTelephone(event.target.value)}
           />
+          Address:{' '}
           <input
             type="text"
-            placeholder="Address (123 Example St., Town, State, Zip Code)"
+            placeholder="123 Example St., Town, State, Zip Code"
             value={address}
             onChange={(event) => setAddress(event.target.value)}
           />
