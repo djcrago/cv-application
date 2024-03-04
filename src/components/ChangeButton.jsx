@@ -1,15 +1,19 @@
 import '../styles/ChangeButton.css';
 
 export default function ChangeButton({ editing, setEditing }) {
-  let text = 'Edit';
+  let text = 'Edit Form';
 
   if (editing) {
-    text = 'Submit';
+    text = 'Submit Form';
   }
 
   return (
     <>
-      <button type="button" onClick={() => setEditing(!editing)}>
+      <button
+        className="change"
+        type="button"
+        onClick={() => setEditing(!editing)}
+      >
         {text}
       </button>
     </>

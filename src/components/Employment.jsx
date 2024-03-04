@@ -78,7 +78,7 @@ export default function Employment({ editing }) {
 
   if (!editing) {
     return (
-      <div className="employment">
+      <div className="info employment">
         <h2>Practical Experience</h2>
         {experiences.map((e) => {
           return <ExperienceItem key={e.id} experience={e} />;
@@ -89,7 +89,7 @@ export default function Employment({ editing }) {
 
   if (editing) {
     return (
-      <div className="employment">
+      <div className="info employment">
         <h2>Practical Experience</h2>
         {experiences.map((experience) => {
           return (

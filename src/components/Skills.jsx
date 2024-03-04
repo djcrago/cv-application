@@ -48,7 +48,7 @@ export default function Skills({ editing }) {
 
   if (!editing) {
     return (
-      <div className="skills">
+      <div className="info skills">
         <h2>Skills</h2>
         {skills.map((skill) => {
           if (skill.text) return <h3 key={skill.id}>{skill.text}</h3>;
@@ -59,7 +59,7 @@ export default function Skills({ editing }) {
 
   if (editing) {
     return (
-      <div className="skills">
+      <div className="info skills">
         <h2>Skills</h2>
         {skills.map((skill) => {
           return (

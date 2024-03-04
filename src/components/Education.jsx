@@ -54,7 +54,7 @@ export default function Education({ editing }) {
 
   if (!editing) {
     return (
-      <div className="education">
+      <div className="info school">
         <h2>Educational History</h2>
         {schools.map((s) => {
           return <SchoolItem key={s.id} school={s} />;
@@ -65,7 +65,7 @@ export default function Education({ editing }) {
 
   if (editing) {
     return (
-      <div className="education">
+      <div className="info education">
         <h2>Educational History</h2>
         {schools.map((school) => {
           return (
