@@ -2,3 +2,66 @@
   font-size: 3rem;
   margin-bottom: 2vh;
 }
+
+.email {
+  width: 65vw;
+}
+
+.telephone {
+  width: 57.7vw;
+}
+
+.address {
+  width: 63.1vw;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+  margin-bottom: 2vh;
+  margin-left: 3vw;
+  padding: 1vh 1vw;
+  background-color: rgb(254, 254, 254);
+  border: 1px solid #494949;
+  border-radius: 8px;
+  width: 74vw;
+  min-height: 10vh;
+}
+
+h3 {
+  margin-bottom: 1vh;
+  font-weight: 100;
+  border-bottom: 2px solid rgb(0, 204, 255);
+  width: max-content;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-left: 3vw;
+}
+
+li {
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+}
+
+form button {
+  display: block;
+  margin: 0 auto;
+}
+
+button,
+input {
+  padding: 4px;
+  color: #494949;
+}

@@ -94,56 +94,73 @@ export default function Employment({ editing }) {
         {experiences.map((experience) => {
           return (
             <form key={experience.id}>
-              Company (or other) Name:{' '}
-              <input
-                type="text"
-                placeholder="Example Company"
-                value={experience.name}
-                onChange={(event) => handleChange(experience, event, 'name')}
-              />
-              Position Title:{' '}
-              <input
-                type="text"
-                placeholder="Example job title"
-                value={experience.title}
-                onChange={(event) => handleChange(experience, event, 'title')}
-              />
-              Started:{' '}
-              <input
-                type="text"
-                placeholder="Month, Year"
-                value={experience.startDate}
-                onChange={(event) =>
-                  handleChange(experience, event, 'startDate')
-                }
-              />
-              Finished:{' '}
-              <input
-                type="text"
-                placeholder="Month, Year"
-                value={experience.endDate}
-                onChange={(event) => handleChange(experience, event, 'endDate')}
-              />
-              Responsibilities:{' '}
-              <input
-                type="text"
-                placeholder="Example responsibility"
-                value={experience.responsibilities}
-                onChange={() =>
-                  handleChange(experience, event, 'responsibilities')
-                }
-              />
+              <span>
+                Company (or other) Name:{' '}
+                <input
+                  type="text"
+                  placeholder="Example Company"
+                  className="employment-name"
+                  value={experience.name}
+                  onChange={(event) => handleChange(experience, event, 'name')}
+                />
+              </span>
+              <span>
+                Position Title:{' '}
+                <input
+                  type="text"
+                  placeholder="Example job title"
+                  className="employment-title"
+                  value={experience.title}
+                  onChange={(event) => handleChange(experience, event, 'title')}
+                />
+              </span>
+              <span>
+                Started:{' '}
+                <input
+                  type="text"
+                  placeholder="Month, Year"
+                  className="start-date"
+                  value={experience.startDate}
+                  onChange={(event) =>
+                    handleChange(experience, event, 'startDate')
+                  }
+                />
+              </span>
+              <span>
+                Finished:{' '}
+                <input
+                  type="text"
+                  placeholder="Month, Year"
+                  className="end-date"
+                  value={experience.endDate}
+                  onChange={(event) =>
+                    handleChange(experience, event, 'endDate')
+                  }
+                />
+              </span>
+              <span>
+                Responsibilities:{' '}
+                <input
+                  type="text"
+                  placeholder="Example responsibility"
+                  className="employment-responsibilities"
+                  value={experience.responsibilities}
+                  onChange={() =>
+                    handleChange(experience, event, 'responsibilities')
+                  }
+                />
+              </span>
               <button
                 type="button"
                 onClick={() => removeExperience(experience)}
               >
-                Remove
+                Remove Experience
               </button>
             </form>
           );
         })}
         <button type="button" onClick={() => addExperience()}>
-          Add
+          Add Experience
         </button>
       </div>
     );

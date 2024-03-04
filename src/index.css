@@ -5,12 +5,10 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  font-size: 1.125rem;
   padding: 4vh 8vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(233, 249, 255);
+  color: #494949;
 }
 
 #root {
@@ -32,27 +30,40 @@ body {
   border-radius: 8px;
   width: 74vw;
   min-height: 10vh;
-  overflow: auto;
 }
 
 h3 {
   margin-bottom: 1vh;
   font-weight: 100;
   border-bottom: 2px solid rgb(0, 204, 255);
-  width: min-content;
+  width: max-content;
 }
 
 ul {
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  margin-left: 2vw;
+  margin-left: 3vw;
 }
 
 li {
   list-style: none;
 }
 
-button {
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+}
+
+form button {
+  display: block;
+  margin: 0 auto;
+}
+
+button,
+input {
   padding: 4px;
+  color: #494949;
 }

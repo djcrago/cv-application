@@ -70,42 +70,54 @@ export default function Education({ editing }) {
         {schools.map((school) => {
           return (
             <form key={school.id}>
-              School (or other) Name:{' '}
-              <input
-                type="text"
-                placeholder="Example Univeristy"
-                value={school.name}
-                onChange={(event) => handleChange(school, event, 'name')}
-              />
-              Title of Study:{' '}
-              <input
-                type="text"
-                placeholder="Degree, certificate, etc."
-                value={school.title}
-                onChange={(event) => handleChange(school, event, 'title')}
-              />
-              Started:{' '}
-              <input
-                type="text"
-                placeholder="Month, Year"
-                value={school.startDate}
-                onChange={(event) => handleChange(school, event, 'startDate')}
-              />
-              Finished:{' '}
-              <input
-                type="text"
-                placeholder="Month, Year"
-                value={school.endDate}
-                onChange={(event) => handleChange(school, event, 'endDate')}
-              />
+              <span>
+                School (or other) Name:{' '}
+                <input
+                  type="text"
+                  placeholder="Example Univeristy"
+                  className="school-name"
+                  value={school.name}
+                  onChange={(event) => handleChange(school, event, 'name')}
+                />
+              </span>
+              <span>
+                Title of Study:{' '}
+                <input
+                  type="text"
+                  placeholder="Degree, certificate, etc."
+                  className="school-title"
+                  value={school.title}
+                  onChange={(event) => handleChange(school, event, 'title')}
+                />
+              </span>
+              <span>
+                Started:{' '}
+                <input
+                  type="text"
+                  placeholder="Month, Year"
+                  className="start-date"
+                  value={school.startDate}
+                  onChange={(event) => handleChange(school, event, 'startDate')}
+                />
+              </span>
+              <span>
+                Finished:{' '}
+                <input
+                  type="text"
+                  placeholder="Month, Year"
+                  className="end-date"
+                  value={school.endDate}
+                  onChange={(event) => handleChange(school, event, 'endDate')}
+                />
+              </span>
               <button type="button" onClick={() => removeSchool(school)}>
-                Remove
+                Remove Education
               </button>
             </form>
           );
         })}
         <button type="button" onClick={() => addSchool()}>
-          Add
+          Add Education
         </button>
       </div>
     );

@@ -64,20 +64,22 @@ export default function Skills({ editing }) {
         {skills.map((skill) => {
           return (
             <form key={skill.id}>
-              <input
-                type="text"
-                placeholder="Description of skill"
-                value={skill.text}
-                onChange={(event) => handleChange(skill, event, 'text')}
-              />
-              <button type="button" onClick={() => removeSkill(skill)}>
-                Remove
-              </button>
+              <span>
+                <input
+                  type="text"
+                  placeholder="Description of skill"
+                  value={skill.text}
+                  onChange={(event) => handleChange(skill, event, 'text')}
+                />
+                <button type="button" onClick={() => removeSkill(skill)}>
+                  Remove Skill
+                </button>
+              </span>
             </form>
           );
         })}
         <button type="button" onClick={() => addSkill()}>
-          Add
+          Add Skill
         </button>
       </div>
     );

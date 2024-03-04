@@ -1,3 +1,12 @@
 .skills > h3 {
   border-bottom: none;
 }
+
+.skills input {
+  width: 59.4vw;
+}
+
+.skills form button {
+  display: inline;
+  margin-left: 1vw;
+}

@@ -41,6 +41,7 @@ export default function GeneralInfo({ editing }) {
               <input
                 type="email"
                 placeholder="example@example.com"
+                className="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
@@ -60,6 +61,7 @@ export default function GeneralInfo({ editing }) {
               <input
                 type="text"
                 placeholder="123 Example St., Town, State, Zip Code"
+                className="address"
                 value={address}
                 onChange={(event) => setAddress(event.target.value)}
               />
