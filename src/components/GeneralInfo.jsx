@@ -7,6 +7,13 @@ export default function GeneralInfo({ editing }) {
   const [telephone, setTelephone] = useState('');
   const [address, setAddress] = useState('');
 
+  const emailRegEx = /^\S+@\S+\.\S+$/;
+
+  let invalid = false;
+  if (email && !emailRegEx.test(email)) {
+    invalid = true;
+  }
+
   if (!editing) {
     return (
       <div>
@@ -14,7 +21,15 @@ export default function GeneralInfo({ editing }) {
         <div className="info">
           <h2>Contact Info</h2>
           <ul>
-            {email && <li>Email: {email}</li>}
+            {!invalid && <li>Email: {email}</li>}
+            {invalid && (
+              <li>
+                Email:{' '}
+                <span className="invalid">
+                  Email must follow the correct format (email@example.com)
+                </span>
+              </li>
+            )}
             {telephone && <li className="telephone">Telephone: {telephone}</li>}
             {address && <li>Address: {address}</li>}
           </ul>
