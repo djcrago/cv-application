@@ -10,42 +10,6 @@ export default function Skills({ editing }) {
     },
   ]);
 
-  function handleChange(skill, event, variable) {
-    setSkills(
-      skills.map((e) => {
-        if (e.id === skill.id) {
-          return { ...e, [variable]: event.target.value };
-        }
-        return e;
-      })
-    );
-  }
-
-  function addSkill() {
-    setNextId(nextId + 1);
-    setSkills([
-      ...skills,
-      {
-        id: nextId + 1,
-        text: '',
-      },
-    ]);
-  }
-
-  function removeSkill(skill) {
-    if (skills.length <= 1) {
-      setSkills([
-        {
-          id: nextId,
-          text: '',
-        },
-      ]);
-    }
-    if (skills.length > 1) {
-      setSkills(skills.filter((s) => s.id !== skill.id));
-    }
-  }
-
   if (!editing) {
     return (
       <div className="info skills">
@@ -83,5 +47,41 @@ export default function Skills({ editing }) {
         </button>
       </div>
     );
+  }
+
+  function handleChange(skill, event, variable) {
+    setSkills(
+      skills.map((e) => {
+        if (e.id === skill.id) {
+          return { ...e, [variable]: event.target.value };
+        }
+        return e;
+      })
+    );
+  }
+
+  function addSkill() {
+    setNextId(nextId + 1);
+    setSkills([
+      ...skills,
+      {
+        id: nextId + 1,
+        text: '',
+      },
+    ]);
+  }
+
+  function removeSkill(skill) {
+    if (skills.length <= 1) {
+      setSkills([
+        {
+          id: nextId,
+          text: '',
+        },
+      ]);
+    }
+    if (skills.length > 1) {
+      setSkills(skills.filter((s) => s.id !== skill.id));
+    }
   }
 }

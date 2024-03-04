@@ -1,12 +1,6 @@
 import '../styles/ChangeButton.css';
 
 export default function ChangeButton({ editing, setEditing }) {
-  let text = 'Edit Form';
-
-  if (editing) {
-    text = 'Submit Form';
-  }
-
   return (
     <>
       <button
@@ -14,7 +8,7 @@ export default function ChangeButton({ editing, setEditing }) {
         type="button"
         onClick={() => setEditing(!editing)}
       >
-        {text}
+        {editing ? 'Submit Form' : 'Edit Form'}
       </button>
     </>
   );

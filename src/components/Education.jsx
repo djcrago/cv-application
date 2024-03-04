@@ -7,51 +7,6 @@ export default function Education({ editing }) {
     { id: nextId, name: '', title: '', startDate: '', endDate: '' },
   ]);
 
-  function SchoolItem({ school }) {
-    if (school.name) {
-      return (
-        <div>
-          <h3>{school.name}</h3>
-          <ul>
-            {school.title && <li>Title of Study: {school.title}</li>}
-            {school.startDate && <li>Started: {school.startDate}</li>}
-            {school.endDate && <li>Finished: {school.endDate}</li>}
-          </ul>
-        </div>
-      );
-    }
-  }
-
-  function handleChange(school, event, variable) {
-    setSchools(
-      schools.map((s) => {
-        if (s.id === school.id) {
-          return { ...s, [variable]: event.target.value };
-        }
-        return s;
-      })
-    );
-  }
-
-  function addSchool() {
-    setNextId(nextId + 1);
-    setSchools([
-      ...schools,
-      { id: nextId + 1, name: '', title: '', startDate: '', endDate: '' },
-    ]);
-  }
-
-  function removeSchool(school) {
-    if (schools.length <= 1) {
-      setSchools([
-        { id: nextId, name: '', title: '', startDate: '', endDate: '' },
-      ]);
-    }
-    if (schools.length > 1) {
-      setSchools(schools.filter((s) => s.id !== school.id));
-    }
-  }
-
   if (!editing) {
     return (
       <div className="info school">
@@ -121,5 +76,50 @@ export default function Education({ editing }) {
         </button>
       </div>
     );
+  }
+
+  function SchoolItem({ school }) {
+    if (school.name) {
+      return (
+        <div>
+          <h3>{school.name}</h3>
+          <ul>
+            {school.title && <li>Title of Study: {school.title}</li>}
+            {school.startDate && <li>Started: {school.startDate}</li>}
+            {school.endDate && <li>Finished: {school.endDate}</li>}
+          </ul>
+        </div>
+      );
+    }
+  }
+
+  function handleChange(school, event, variable) {
+    setSchools(
+      schools.map((s) => {
+        if (s.id === school.id) {
+          return { ...s, [variable]: event.target.value };
+        }
+        return s;
+      })
+    );
+  }
+
+  function addSchool() {
+    setNextId(nextId + 1);
+    setSchools([
+      ...schools,
+      { id: nextId + 1, name: '', title: '', startDate: '', endDate: '' },
+    ]);
+  }
+
+  function removeSchool(school) {
+    if (schools.length <= 1) {
+      setSchools([
+        { id: nextId, name: '', title: '', startDate: '', endDate: '' },
+      ]);
+    }
+    if (schools.length > 1) {
+      setSchools(schools.filter((s) => s.id !== school.id));
+    }
   }
 }
